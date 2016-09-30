@@ -31,7 +31,7 @@ function createWindow () {
 function createMenu(){
 
     let template = [{
-        label: "ElectronSlideshow",
+        label: "Epic Screen",
         submenu: [
             {
                 role: 'about'

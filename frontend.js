@@ -4,7 +4,23 @@ const readChunk = require('read-chunk');
 const fileType = require('file-type');
 const $ = require('jquery');
 
+const Config = require('electron-config');
+const config = new Config();
+
 let index = 0;
+
+$(document).ready(() => {
+  let messageElm = $("#message");
+  let messageSpanElm = $("#message-span");
+  messageElm.val(config.get('message'))
+  messageSpanElm.html(config.get('message') || '  ')
+  
+  messageElm.on('input',(val)=>{
+    config.set('message', messageElm.val())    
+    messageSpanElm.html(config.get('message') || '  ')
+  })
+  
+})
 
 function updateSlideshow(){
     ipcRenderer.once('list_files_reply', (event,arg)=>{
@@ -54,7 +70,7 @@ function showAsset(file, cb){
 
         dom.append(elm)
 
-        setTimeout(cb, 5000)
+        setTimeout(cb, 15000)
     }
 
 
