@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>...</title>
+
+    <script src="frontend.js"></script>
+
+    <style>
+    body{
+        background:black;
+    }
+
+    #content {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+    }
+
+    #content img {
+        object-fit: contain;
+        height: 100%;
+        width: 100%;
+    }
+
+    #content video {
+        object-fit: contain;
+        width:100%;
+        height:100%;
+    }
+
+    .url {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        background-color: black;
+        color: white;
+        font-size: 20px;
+        padding:10px 20px;
+        font-family: sans-serif;
+    }
+    </style>
+</head>
+<body>
+    <div id="content">
+
+    </div>
+    <div class="url">
+        URL?
+    </div>
+</body>
+</html>
