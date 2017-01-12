@@ -1,5 +1,5 @@
-const {app, BrowserWindow, Menu, ipcMain, dialog} = require('electron')
-
+const electron = require('electron')
+const {app, BrowserWindow, Menu, ipcMain, dialog} = electron
 const Config = require('electron-config');
 const config = new Config();
 
@@ -19,7 +19,13 @@ function createWindow () {
     win.loadURL(`file://${__dirname}/index.html`)
 
     // Open the DevTools.
-    // win.webContents.openDevTools()
+    win.webContents.openDevTools()
+
+    const ret = electron.globalShortcut.register('Escape', function(){
+        console.log('Escape is pressed');
+        minimizeWindow();
+    })
+
 
     // Emitted when the window is closed.
     win.on('closed', () => {
@@ -28,6 +34,21 @@ function createWindow () {
         // when you should delete the corresponding element.
         win = null
     })
+
+    app.on('will-quit', function(){
+
+        electron.globalShortcut.unregister('Escape');
+
+        electron.globalShortcut.unregisterAll();
+    });
+
+}
+
+function minimizeWindow(){
+
+    win.setFullScreen(false);
+    console.log(win);
+
 }
 
 function createMenu(){

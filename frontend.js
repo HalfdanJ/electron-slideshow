@@ -1,5 +1,5 @@
 const {ipcRenderer} = require('electron')
-const remote = require('electron').remote
+const remote = require('electron').remote;
 
 const readChunk = require('read-chunk');
 const fileType = require('file-type');
@@ -20,21 +20,7 @@ $(document).ready(() => {
     config.set('message', messageElm.val())    
     messageSpanElm.html(config.get('message') || '  ')
   })
-  
 })
-
-$(document).addEventListener("keydown", event => {
-
-    switch (event.key){
-        case "Escape":
-            var window = BrowserWindow.getFocusedWindow();
-            if(remote.getCurrentWindow().isFullScreen()){
-                remote.getCurrentWindow().setFullScreen(false);
-            }
-            break;
-    }
-    
-});
 
 function updateSlideshow(){
     ipcRenderer.once('list_files_reply', (event,arg)=>{
