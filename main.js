@@ -19,7 +19,7 @@ function createWindow () {
     win.loadURL(`file://${__dirname}/index.html`)
 
     // Open the DevTools.
-    win.webContents.openDevTools()
+    //win.webContents.openDevTools()
 
     const ret = electron.globalShortcut.register('Escape', function(){
         console.log('Escape is pressed');
