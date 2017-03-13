@@ -26,6 +26,7 @@ function createWindow () {
         minimizeWindow();
     })
 
+    console.log('config.path: '+config.get("path"));
 
     // Emitted when the window is closed.
     win.on('closed', () => {

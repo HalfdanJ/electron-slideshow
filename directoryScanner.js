@@ -1,5 +1,6 @@
 const fs = require('fs')
 const path = require('path');
+const util = require('util');
 
 class DirectoryScanner {
     constructor(){
@@ -12,10 +13,11 @@ class DirectoryScanner {
     }
 
     scan(){
-        fs.readdir(this.path, (err, files) => {
-            files = files.map((f) => path.join(this.path, f));
-            this.files = files;
-        })
+        //get visible files only
+        this.files = fs.readdirSync(this.path)
+            .filter(file => fs.statSync(path.join(this.path, file)).isFile() 
+              && !(/(^|\/)\.[^\/\.]/g).test(file) )
+            .map(f => path.join(this.path, f))
     }
 }
 
