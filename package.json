@@ -4,7 +4,8 @@
   "main": "main.js",
   "scripts": {
     "start": "electron .",
-    "build": "electron-packager . --platform=darwin"
+    "build-osx": "electron-packager ./ EpicScreen --overwrite --platform=darwin --arch=x64",
+    "build-linux": "electron-packager ./ EpicScreen --overwrite --platform=linux --arch=x64"
   },
   "devDependencies": {
     "electron": "^1.4.1",
@@ -14,6 +15,7 @@
     "electron-config": "^0.2.1",
     "file-type": "^3.8.0",
     "jquery": "^3.1.1",
-    "read-chunk": "^2.0.0"
+    "read-chunk": "^2.0.0",
+    "electron-packager": "^8.5.2"
   }
 }
