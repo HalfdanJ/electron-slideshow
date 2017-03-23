@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>EpicScreen</title>
+
+    <script src="frontend.js"></script>
+
+    <style>
+    body{
+        background:black;
+        overflow: hidden;
+    }
+
+    #content {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+    }
+
+    #content img {
+        object-fit: contain;
+        height: 100%;
+        width: 100%;
+    }
+
+    #content video {
+        object-fit: contain;
+        width:100%;
+        height:100%;
+    }
+
+    .url {
+        position: absolute;
+        bottom: 20px;
+        left: 20px;
+        background-color: black;
+        color: white;
+        font-size: 20px;
+        padding:10px 20px;
+        font-family: sans-serif;
+    }
+    
+    .url input {
+      display:none;
+      background-color: #333;
+      padding: 10px 20px;
+      color: white;
+      font-size: 20px;
+      border:0;
+      font-family: sans-serif;
+      position:absolute;
+      top:0px;
+      left:0px;
+    }
+    
+    .url:hover input {
+      display:inline;
+    }
+    
+    </style>
+</head>
+<body>
+    <div id="content">
+
+    </div>
+    <div class="url">
+      <span id="message-span"></span>
+        <input id="message"/>
+    </div>
+</body>
+</html>

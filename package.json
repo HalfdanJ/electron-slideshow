@@ -5,8 +5,10 @@
   "scripts": {
     "start": "electron .",
     "build-osx": "electron-packager ./ EpicScreen --overwrite --platform=darwin --arch=x64",
-    "build-linux": "electron-packager ./ EpicScreen --overwrite --platform=linux --arch=x64"
+    "build-linux": "electron-packager ./ EpicScreen --overwrite --platform=linux --arch=x64",
+    "build-linux-arm": "electron-packager ./ EpicScreen --overwrite --platform=linux --arch=armv7l"
   },
+
   "devDependencies": {
     "electron": "^1.4.1",
     "electron-packager": "^8.0.0"
