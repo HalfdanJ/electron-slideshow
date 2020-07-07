@@ -8,7 +8,7 @@
     "build-linux": "electron-packager ./ EpicScreen --overwrite --platform=linux --arch=x64"
   },
   "devDependencies": {
-    "electron": "^1.4.1",
+    "electron": "^9.1.0",
     "electron-packager": "^8.0.0"
   },
   "dependencies": {
